@@ -1,0 +1,98 @@
+body {
+    font-family: "Comfortaa";
+}
+
+.container {
+    width: 100%;
+    background-color: rgb(42, 42, 42);
+    height: 100px;
+    
+}
+
+.header_inner {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-size: 32px;
+    
+}
+
+.site__logo {
+    height: 80%;    
+}
+
+.app {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    margin: 20px;
+    
+}
+
+.work__app {
+    border: 2px solid black;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-right: 20px;
+
+}
+
+.limit, .wallet {
+    display: flex;
+}
+
+.left__column {
+    padding-right: 20px;
+    width: 40%;
+}
+
+.description__app {
+    border: 2px solid black;
+    border-radius: 40px;
+    height: 100%;
+    width: 25%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.footer_container {
+    width: 100%;
+    background-color: rgb(42, 42, 42);
+    height: 100px;
+    
+    position: absolute;
+    bottom: 0px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-size: 32px;
+    
+    
+}
+
+.footer_inner {
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-size: 32px;
+    
+    
+}

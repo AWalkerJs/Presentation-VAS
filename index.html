@@ -7,37 +7,92 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Comfortaa:wght@300..700&family=Raleway&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/Styles/ResetCSS/reset.css">
+    <link rel="stylesheet" href="/Styles/style.css">
 
     <title>VAS Reference</title>
 </head>
 <body>
     <header>
-        <section class="header_container">
-            <a href="#about_me"><p class="header_text"> About Me </p></a>
-            <a href="#my_app"><p class="header_text"> My Application </p></a>
-            <a href="#technology"><p class="header_text"> Technology </p></a>
+        <section class="container">
+            <div class="header_inner">
+                <img class="site__logo" 
+                src="/Resources/site_logo.png" 
+                alt="Site Logo">
+
+                <p>Приложения</p>
+                <p>Контакты</p>
+                <p>Обо мне</p>
+        
+            </div>
         </section>
     </header>
 
 
     <main>  
-        <section class="main_section">
-            
+        <section class="main__section">
+            <div class="app">
+                <div class="work__app">
+                    <div class="left__column">
+                        <input 
+                        type="number"
+                        min="0"
+                        class="input__debet"
+                        placeholder="Введи число">
+                        <button class="input__button">Record</button>
+                        
+                        
+                        <div>
+                            <select class="category__select">
+                            <option hidden="" disabled="" selected="" value="Категория">Категория:</option>
+                            <option>Кафе</option>
+                            <option>Продукты</option>
+                            <option>Здоровье</option>
+                            <option>Развлечения</option>
+                            <option>Транспорт</option>                            
+                            <option>Квартира</option>
+                            </select>
+                        </div>
+
+                        <div class="limit">
+                             <div>Лимит:</div>
+                             <div class="limit__money">0</div>                            
+                        </div>
+
+                        <div class="wallet">
+                            <div>Состояние кошелька:</div>
+                            <div class="wallet__status"> Akk OK</div>
+                        </div>
+                        <button>Clear Debet</button>
+                    </div>
+                    <div class="right__column">
+                        Список трат:
+                        <div class="debet__list">
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="description__app">
+
+                </div>
+            </div>
         </section>
     </main>
 
 
     <footer>
         <section class="footer_container">
-            <a href="tel:+79772678268" class="a_footer">+7 (977) 267 82 68</a>
-            <a href="mailto:vas@aturen.ru" class="a_footer">vas@aturen.ru</a>
-            <p> VAS2024 </p>
+            <div class="footer_inner">
+                <a href="tel:+79772678268" class="footer_content">+7 (977) 267 82 68</a>
+                <a href="mailto:vas@aturen.ru" class="footer_content">vas@aturen.ru</a>
+                <p class="footer_content"> VAS2024 </p>
+            </div>
         </section>
     </footer>
 
-    <script src=""></script>
+    <script src="/Scripts/script.js"></script>
 </body>
 </html>
