@@ -131,6 +131,7 @@ body {
     opacity: 0;
     visibility: hidden;
     padding: 20px;
+    box-sizing: border-box;
 
     transition: 0.3s;
 }
@@ -162,6 +163,46 @@ body {
     right: 35%;
     background-color: rgb(151, 0, 0);
 }
+
+.column__popup {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.second__column__popup {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.limit__popup__input {
+    width: 60%;
+}
+
+.limit__button {
+    width: 30%;
+    
+}
+
+.limit__button , .incr__button {
+    background-color: rgb(96, 96, 96);
+    color: white;
+    border-radius: 10%;
+}
+
+.limit__button:hover , .incr__button:hover {
+    background-color: white;
+    color: rgb(96, 96, 96);
+    transition: 0,3s;
+
+}
+
+
 
 /* Классы для позиционирования 
 каждого элемента*/
@@ -264,6 +305,21 @@ select:hover{
         margin-bottom: 10px;
     }
     
+    .expense__popup__content {
+        width: 75%;
+    }
+
+    .expense__close__button {
+        right: 15%;
+    }
+
+    .column__popup {
+        flex-direction: column;
+    }
+
+    .limit__button {
+        width: 60%;
+    }
 
 }
 
