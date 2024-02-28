@@ -100,7 +100,7 @@ body {
 }
 
 .set__limit {
-    background-image: url(/Resources/edit.png);
+    background-image: url(Resources/edit.png);
     
     background-repeat: no-repeat;
     background-size: contain;
