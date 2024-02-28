@@ -36,42 +36,48 @@
             <div class="app">
                 <div class="work__app">
                     <div class="left__column">
-                        <input 
-                        type="number"
-                        min="0"
-                        class="input__debet"
-                        placeholder="Введи число">
-                        <button class="input__button">Record</button>
-                        
+                        <div class="input__decoration">
+                            <input 
+                            type="number"
+                            min="1"
+                            class="input__debet"
+                            placeholder="Введи число">
+                            <button class="input__button">Record</button>
+                        </div>
                         
                         <div>
                             <select class="category__select">
-                            <option hidden="" disabled="" selected="" value="Категория">Категория:</option>
-                            <option>Кафе</option>
-                            <option>Продукты</option>
-                            <option>Здоровье</option>
-                            <option>Развлечения</option>
-                            <option>Транспорт</option>                            
-                            <option>Квартира</option>
+                                <option hidden="" disabled="" selected="" value="Категория">Категория:</option>
+                                <option value="Кафе">Кафе</option>
+                                <option value="Продукты">Продукты</option>
+                                <option value="Здоровье">Здоровье</option>
+                                <option value="Развлечения">Развлечения</option>
+                                <option value="Транспорт">Транспорт</option>                            
+                                <option value="Квартира">Квартира</option>
                             </select>
                         </div>
 
                         <div class="limit">
                              <div>Лимит:</div>
-                             <div class="limit__money">0</div>                            
+                             <div class="limit__money"> 1000 </div>  
+                             <button class="set__limit">  </button>                          
                         </div>
 
+                        <div class="expense__score">
+                            <div>Всего трат</div>
+                            <div class="expense__status"> 0 </div>
+                        </div>
                         <div class="wallet">
                             <div>Состояние кошелька:</div>
-                            <div class="wallet__status"> Akk OK</div>
+                            <div class="wallet__status">  </div>
                         </div>
-                        <button>Clear Debet</button>
+                        <button class="clear__expense__score">Clear</button>
                     </div>
                     <div class="right__column">
                         Список трат:
-                        <div class="debet__list">
-
-                        </div>
+                        <ol class="debet__list" type="1" start="1">
+                            
+                        </ol>
                     </div>
                     
                 </div>
@@ -82,17 +88,38 @@
         </section>
     </main>
 
+    <!-- 
+        Поп-ап для установки лимита
+     -->
 
-    <footer>
-        <section class="footer_container">
-            <div class="footer_inner">
+     <div class="expense__popup">
+        <div class="expense__popup__content">
+            <button class="expense__close__button"></button>
+            <div>
+                <input 
+                    type="number"
+                    min="1"
+                    class="limit__popup__input"
+                    placeholder="Введи число">
+                <button class="limit__button">Сохранить</button>
+            </div>
+            <div>
+                <button class="ten__incr">+10</button>
+                <button class="hungred__incr">+100</button>
+                <button class="thousand__incr">+1000</button>
+            </div>
+        </div>
+     </div>
+
+
+    <footer class="footer_container">
                 <a href="tel:+79772678268" class="footer_content">+7 (977) 267 82 68</a>
                 <a href="mailto:vas@aturen.ru" class="footer_content">vas@aturen.ru</a>
                 <p class="footer_content"> VAS2024 </p>
-            </div>
-        </section>
     </footer>
 
     <script src="/Scripts/script.js"></script>
+    <script src="/Scripts/expense.js"></script>
+    <script src="/Scripts/popupExpense.js"></script>
 </body>
 </html>
