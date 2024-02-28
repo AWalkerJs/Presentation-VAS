@@ -33,8 +33,9 @@ body {
     flex-direction: row;
     justify-content: space-around;
     
-    height: 200px;
+    max-height: 100%;
     margin: 20px;
+    box-sizing: border-box;
     
 }
 
@@ -55,25 +56,26 @@ body {
 .limit, .wallet , .expense__score{
     display: flex;
     gap: 10px;
+    margin-bottom: 5px;
 }
 
 .left__column {
     padding-right: 20px;
-    width: 50%;
+    min-width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
    
 }
+
 
 .description__app {
     border: 2px solid black;
     border-radius: 40px;
-    height: 100%;
+    max-height: 100%;
     width: 25%;
     padding: 20px;
-    box-sizing: border-box;
+    
 }
 
 
@@ -83,14 +85,15 @@ body {
     height: 100px;
     
     
-    bottom: 0px;
+    box-sizing: border-box;
+    padding: 20px;
 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    box-sizing: border-box;
+    
+    
     color: white;
     font-size: 32px;
     
@@ -182,8 +185,90 @@ body {
     transition: 0s;
 }
 
-select:hover {
+select:hover{
     color: white;
     background-color: rgb(96, 96, 96);
     transition: 1s;
 }
+
+.input__debet {
+    width: 50%;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.input__button {
+    cursor: pointer;
+    background-color: rgb(96, 96, 96);
+    color: white;
+}
+
+.input__button:hover {
+    cursor: pointer;
+    background-color: white;    
+    color: rgb(96, 96, 96);
+}
+
+.category__select {
+    margin-bottom: 5px;
+    width: 50%;
+}
+
+
+/* Медиа Стили */
+@media (max-width: 767px) {
+    .container {
+        height: 100px;
+    }
+
+    .header_inner {
+        flex-direction: column;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 10px;
+        
+    }
+
+    .site__logo {
+        height: 40%;  
+        margin-top: 5px;
+        margin-bottom: 5px;  
+    }
+
+    p {
+        margin-bottom: 5px;
+    }
+
+    .app {
+        flex-direction: column;
+    }
+
+    .work__app {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .description__app {
+        width: 100%;
+        box-sizing: border-box;
+        
+    }
+
+    .footer_container {
+        flex-direction: column;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .footer_content {
+        margin-bottom: 10px;
+    }
+    
+
+}
+
+
+
+
+
+
