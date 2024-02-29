@@ -13,6 +13,8 @@ const walletStatus = document.querySelector(".wallet__status");
 const expenses = [];
 const expensesTitle = [];
 
+dataLoaded();
+
 inputButton.addEventListener("click", function () {
     if ((inputValue.value == "") || (categoryValue.value == "Категория")) {
         return;
@@ -30,6 +32,9 @@ inputButton.addEventListener("click", function () {
     
     expenseScore.innerText = expenses.reduce((a, b) => a + b);
     checkLimit();
+
+    localStorage.debetStatus = debetList.innerHTML;
+    localStorage.expenseStatus = expenseScore.innerText;
 })
 
 clearExpense.addEventListener("click", function () {
@@ -39,7 +44,9 @@ clearExpense.addEventListener("click", function () {
     expenseScore.innerText = 0;
     debetList.innerHTML = "";
     walletStatus.innerText = "";
-    
+    limitMoney.innerText = 0;
+
+    localStorage.clear();    
 })
 
 function checkLimit () {
@@ -52,7 +59,20 @@ function checkLimit () {
         walletStatus.classList.remove(WELL_STATUS);
         walletStatus.classList.add(BAD_STATUS);
     }
+    localStorage.dataStatus = walletStatus.innerText;
+    localStorage.moneyStatus = limitMoney.innerText;
 }
 
+function dataLoaded () {
+
+    if (!localStorage.dataStatus) {return}
+
+    walletStatus.innerText = localStorage.dataStatus;
+    limitMoney.innerText = localStorage.moneyStatus;
+    debetList.innerHTML = localStorage.debetStatus;
+    expenseScore.innerText = localStorage.expenseStatus;
+
+    checkLimit();
+}
 
 

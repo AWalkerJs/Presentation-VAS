@@ -39,6 +39,7 @@ incrButton.forEach(function (elem) {
             return
         }
         limitPopupInput.value = +limitPopupInput.value + +elem.innerText;
+        checkLimit();
     })
 })
 
