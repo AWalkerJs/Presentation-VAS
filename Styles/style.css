@@ -93,10 +93,15 @@ body {
     align-items: center;
     justify-content: space-between;
     
-    
+    text-decoration: none;
     color: white;
     font-size: 32px;
-    
+}
+
+.footer_content {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .set__limit {
