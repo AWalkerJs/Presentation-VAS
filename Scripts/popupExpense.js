@@ -39,13 +39,13 @@ incrButton.forEach(function (elem) {
             return
         }
         limitPopupInput.value = +limitPopupInput.value + +elem.innerText;
-        checkLimit();
     })
 })
 
 setNewLimit.addEventListener("click", function () {
     limitMoney.innerText = limitPopupInput.value;
     togglePopup();
+    checkLimit();
 })
 
 
