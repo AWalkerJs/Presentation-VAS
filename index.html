@@ -86,7 +86,60 @@
                     <p class="description__content"> Работает на ПК и на мобильных, 
                         чуть с разным дизайном. Идет сохранение данных в localStorage и подгрузка 
                         их в самом начале. Реализовано поп ап меню для задачи нового лимита.
-                        
+
+                    </p>
+                </div>
+            </div>
+
+<!-- Второе приложение -->
+<!-- Описание -->
+            <div class="app">
+                <div class="work__app">
+                    <div class="tikitaka__column  ">
+                        <div class="tikitaka">
+                            <div class="0 tikitaka__pole"></div>
+                            <div class="1 tikitaka__pole"></div>
+                            <div class="2 tikitaka__pole"></div>
+                        </div>
+                        <div class="tikitaka">
+                            <div class="3 tikitaka__pole"></div>
+                            <div class="4 tikitaka__pole"></div>
+                            <div class="5 tikitaka__pole"></div>
+                        </div>
+                        <div class="tikitaka">
+                            <div class="6 tikitaka__pole"></div>
+                            <div class="7 tikitaka__pole"></div>
+                            <div class="8 tikitaka__pole"></div>
+                        </div>
+                    </div>
+                    <div class="right__column tikitaka__winner">
+                        <div class="tikitaka__menu">
+                            <select class="side__choose">
+                                <option hidden="" disabled="" selected="" value="side__value">Выбери сторону:</option>
+                                <option value="mark__x">Крестики</option>
+                                <option value="mark__o">Нолики</option>
+                            </select>
+                            <select class="number__choose">
+                                <option hidden="" disabled="" selected="" value="number__value">Выбери ход:</option>
+                                <option value="choose__first">Первый</option>
+                                <option value="choose__second">Второй</option>
+                            </select>
+                            <select class="dificult__choose">
+                                <option hidden="" disabled="" selected="" value="dificult__value">Выбери сложность:</option>
+                                <option value="easy__dificult">Легкая</option>
+                                <option value="normal__dificult">Нормальная</option>
+                            </select>
+                            <button class="start__game">Начать игру</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="description__app">
+                    <h1 class="description__tittle">Игра в крестики нолики.</h1>
+                    <p class="description__content"> Работает на ПК и на мобильных, 
+                        чуть с разным дизайном. Сделал выбор стороны + выбор символа
+                        за который хочешь играть. Сделал выбор сложности.
+
                     </p>
                 </div>
             </div>
@@ -123,6 +176,7 @@
                 <p class="footer_content"> VAS2024 </p>
     </footer>
 
+    <script src="Scripts/rockPaper.js"></script>
     <script src="Scripts/script.js"></script>
     <script src="Scripts/expense.js"></script>
     <script src="Scripts/popupExpense.js"></script>

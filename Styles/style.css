@@ -60,7 +60,7 @@ body {
 }
 
 .left__column {
-    padding-right: 20px;
+   
     min-width: 50%;
     display: flex;
     flex-direction: column;
@@ -111,6 +111,7 @@ body {
 .set__limit {
     background-image: url(/Resources/edit.png);
     
+    cursor: pointer;
     background-repeat: no-repeat;
     background-size: contain;
     text-decoration: none;
@@ -262,6 +263,62 @@ select:hover{
 .category__select {
     margin-bottom: 5px;
     width: 50%;
+}
+
+
+/* Rock Paper Style */
+/* Стили для крестиков ноликов */
+
+.tikitaka {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
+    
+}
+
+.tikitaka__pole {
+    width: 50px;
+    height: 50px;
+    
+    border: 2px solid black;
+    background-color: rgb(96, 96, 96);
+    color: white;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tikitaka__pole:hover {
+    
+    background-color: white;
+    color: rgb(96, 96, 96);
+}
+
+.tikitaka__column {
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+.tikitaka__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin: auto;
+    width: 60%;
+    height: 100%;
+}
+
+.tikitaka__winner {
+    width: 100%;
+    
 }
 
 
