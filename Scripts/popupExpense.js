@@ -26,7 +26,7 @@ popupWindow.addEventListener("click", function (click) {
 function togglePopup () {
 
     popupWindow.classList.toggle(POPUP_ACTIVE);
-    popupWindow.classList.toggle(BODY_FIX_SCROLL);
+    bodyClass.classList.toggle(BODY_FIX_SCROLL);
 
 }
 

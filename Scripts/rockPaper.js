@@ -8,12 +8,14 @@ let markCounter = [];
 let zeroCounter = [];
 const winner = document.querySelector(".tikitaka__winner")
 
-const tikitakaContent = document.querySelector(".tikitaka__popup__content")
+
 const sideValue = document.querySelector(".side__choose");
 const numberValue = document.querySelector(".number__choose");
 const dificultValue = document.querySelector(".dificult__choose");
 const gameStartButton = document.querySelector(".start__game");
+
 const tikitakaPopUp = document.querySelector(".tikitaka__popup");
+const tikitakaContent = document.querySelector(".tikitaka__popup__content");
 
 
 gameStartButton.addEventListener("click", function () {
@@ -36,25 +38,28 @@ let pole = document.querySelectorAll(".tikitaka__pole");
 
 pole.forEach((elem, index) => {
     elem.addEventListener("click", function(){
-        if (elem.innerText === "") {
-            elem.innerHTML = "X";
+        
+        if ((elem.innerText !== "X") && (elem.innerText !== "O")) {
+            elem.innerText = "X";
             markCounter.push(index);
+            counterTikitaka++;
+            checkWin();
+            botRound();
+            checkWin();
             
         } 
-        counterTikitaka++;
-        checkWin();
-        botRound();
-        checkWin();
+        
+        
         
     })
 })
 
 function botRound() {
     let positionTik = getRandomPosition();
-    if ((pole[positionTik].innerHTML == "X") || (pole[positionTik].innerHTML == "O")) {
+    if ((pole[positionTik].innerText == "X") || (pole[positionTik].innerText == "O")) {
         botRound();
     } else {    
-        pole[positionTik].innerHTML = "O";
+        pole[positionTik].innerText = "O";
         zeroCounter.push(positionTik);
         counterTikitaka++
     }
