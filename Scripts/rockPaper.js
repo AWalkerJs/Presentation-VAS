@@ -45,9 +45,9 @@ pole.forEach((elem, index) => {
             elem.innerText = "X";
             markCounter.push(index);
             checkWin();
-            counterTikitaka++;
             
             botRound();
+            
             
         } 
           
@@ -58,20 +58,7 @@ pole.forEach((elem, index) => {
 let forEachcounter = 0;
 
 function botRound() {
-
-    pole.forEach((elem) => {
-            
-            if ((elem.innerText !== "")) {
-                forEachcounter++;
-                
-            } 
-              
-        })
-
-    if (forEachcounter==9) {
-        checkWin()
-        return
-    }
+    
 
     let positionTik = getRandomPosition();
     if ((pole[positionTik].innerText !== "X") && (pole[positionTik].innerText !== "O")) {
@@ -81,7 +68,7 @@ function botRound() {
         counterTikitaka++;
         
     } else if (counterTikitaka===9) {
-        checkWin();
+        return
     } else {
 
         botRound();
@@ -95,11 +82,11 @@ function getRandomPosition() {
 }
 
 function checkWin() {
-
+    console.log (markCounter);
     for(let ch of mapWinner) {
         let winnerX = 0;
         let winnerO = 0;
-            for (let i=0; i<zeroCounter.length; i++){
+            for (let i=0; i<markCounter.length; i++){
                 if (ch.includes(markCounter[i])) {
                     winnerX++;
                     if (winnerX === 3) {
@@ -119,21 +106,29 @@ function checkWin() {
                         setTimeout(clearGame,1000);
                         console.log ("Победили нолики")
                     }
-                } else if (counterTikitaka===9) {
-                    popUptoggle();
-                    winner.innerHTML = "Ничья";
-                    console.log ("ничья")
-                    setTimeout(clearGame,1000);
+                } else {
+                    counterTikitaka++;
                 }
                 
         }
     }
 
+    if (counterTikitaka===9) {
+        popUptoggle();
+        winner.innerHTML = "Ничья";
+        console.log ("ничья")
+        setTimeout(clearGame,1000);
+    }
 }
 
 function popUptoggle () {
-    tikitakaPopUp.classList.toggle(POP_UP_OPEN_TIKITAKA);
-    bodyClass.classList.toggle(BODY_FIX_TIKITAKA);
+    tikitakaPopUp.classList.add(POP_UP_OPEN_TIKITAKA);
+    bodyClass.classList.add(BODY_FIX_TIKITAKA);
+}
+
+function popUptoggleRemove () {
+    tikitakaPopUp.classList.remove(POP_UP_OPEN_TIKITAKA);
+    bodyClass.classList.remove(BODY_FIX_TIKITAKA);
 }
 
 function clearGame() {
@@ -150,6 +145,6 @@ tikitakaPopUp.addEventListener("click", function (click) {
     const clickOuside = !click.composedPath().includes(tikitakaContent);
 
     if (clickOuside) {
-        popUptoggle();
+        popUptoggleRemove();
     }
 })
