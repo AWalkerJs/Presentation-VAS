@@ -212,7 +212,44 @@ body {
 
 }
 
+/* Поп-ап для определения победителя
+крестики нолики */
 
+.tikitaka__popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+
+    transition: 0.3s;
+}
+
+.tikitaka__popup__content {
+    width: 30%;
+    background-color: white;
+    height: 20%;
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.tikitaka__popup__open {
+    opacity: 1;
+    visibility: visible;
+}
 
 /* Классы для позиционирования 
 каждого элемента*/
@@ -316,7 +353,7 @@ select:hover{
     height: 100%;
 }
 
-.tikitaka__winner {
+.tikitaka__bug {
     width: 100%;
     
 }

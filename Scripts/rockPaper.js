@@ -1,18 +1,25 @@
-const tikitaka = document.querySelector(".tikitaka")
+const POP_UP_OPEN_TIKITAKA = "tikitaka__popup__open";
+const BODY_FIX_TIKITAKA = "body__fixed";
+
+const bodyClass = document.querySelector(".body");
+const tikitaka = document.querySelector(".tikitaka");
 let counterTikitaka = 0;
 let markCounter = [];
 let zeroCounter = [];
 const winner = document.querySelector(".tikitaka__winner")
 
-const sideValue = document.querySelector(".side__choose").value;
-const numberValue = document.querySelector(".number__choose").value;
-const dificultValue = document.querySelector(".dificult__choose").value;
+const tikitakaContent = document.querySelector(".tikitaka__popup__content")
+const sideValue = document.querySelector(".side__choose");
+const numberValue = document.querySelector(".number__choose");
+const dificultValue = document.querySelector(".dificult__choose");
 const gameStartButton = document.querySelector(".start__game");
+const tikitakaPopUp = document.querySelector(".tikitaka__popup");
+
 
 gameStartButton.addEventListener("click", function () {
-    console.log (sideValue);
-    console.log (numberValue);
-    console.log (dificultValue);
+    console.log (sideValue.value);
+    console.log (numberValue.value);
+    console.log (dificultValue.value);
 })
 
 const mapWinner =   [[0,1,2],
@@ -22,18 +29,19 @@ const mapWinner =   [[0,1,2],
                     [1,4,7],
                     [2,5,8],
                     [0,4,8],
-                    [2,4,6],];
+                    [2,4,6]];
 
 
 let pole = document.querySelectorAll(".tikitaka__pole");
 
 pole.forEach((elem, index) => {
     elem.addEventListener("click", function(){
-        if (!elem.innerText ) {
+        if (elem.innerText === "") {
             elem.innerHTML = "X";
             markCounter.push(index);
             
         } 
+        counterTikitaka++;
         checkWin();
         botRound();
         checkWin();
@@ -48,7 +56,9 @@ function botRound() {
     } else {    
         pole[positionTik].innerHTML = "O";
         zeroCounter.push(positionTik);
+        counterTikitaka++
     }
+    
     
 }
 
@@ -57,7 +67,7 @@ function getRandomPosition() {
 }
 
 function checkWin() {
-    
+
     for(let ch of mapWinner) {
         let winnerX = 0;
         let winnerO = 0;
@@ -65,19 +75,35 @@ function checkWin() {
                 if (ch.includes(markCounter[i])) {
                     winnerX++;
                     if (winnerX == 3) {
+                        popUptoggle();
                         winner.innerHTML = "Победили КРЕСТИКИ";
+
                         setTimeout(clearGame,2000);
                     }
                 }
                 if (ch.includes(zeroCounter[i])) {
                     winnerO++;
                     if (winnerO == 3) {
+                        popUptoggle();
                         winner.innerHTML = "Победили НОЛИКИ";
+                        
                         setTimeout(clearGame,2000);
                     }
                 } 
         }
     }
+
+    if (counterTikitaka === 9) {
+        popUptoggle();
+        winner.innerHTML = "Ничья";
+                        
+        setTimeout(clearGame,2000);
+    }
+}
+
+function popUptoggle () {
+    tikitakaPopUp.classList.toggle(POP_UP_OPEN_TIKITAKA);
+    bodyClass.classList.toggle(BODY_FIX_TIKITAKA);
 }
 
 function clearGame() {
@@ -86,5 +112,14 @@ function clearGame() {
     }
     markCounter = [];
     zeroCounter = [];
-    winner.innerHTML = "";
+    counterTikitaka = 0;
+    
 }
+
+tikitakaPopUp.addEventListener("click", function (click) {
+    const clickOuside = !click.composedPath().includes(tikitakaContent);
+
+    if (clickOuside) {
+        popUptoggle();
+    }
+})
