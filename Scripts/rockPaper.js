@@ -33,6 +33,8 @@ const mapWinner =   [[0,1,2],
                     [0,4,8],
                     [2,4,6]];
 
+const chooseSideArr = ["X", "O"];
+
 
 let pole = document.querySelectorAll(".tikitaka__pole");
 
@@ -42,26 +44,47 @@ pole.forEach((elem, index) => {
         if ((elem.innerText !== "X") && (elem.innerText !== "O")) {
             elem.innerText = "X";
             markCounter.push(index);
+            checkWin();
             counterTikitaka++;
-            checkWin();
+            
             botRound();
-            checkWin();
             
         } 
-        
-        
-        
+          
     })
 })
 
+
+let forEachcounter = 0;
+
 function botRound() {
+
+    pole.forEach((elem) => {
+            
+            if ((elem.innerText !== "")) {
+                forEachcounter++;
+                
+            } 
+              
+        })
+
+    if (forEachcounter==9) {
+        checkWin()
+        return
+    }
+
     let positionTik = getRandomPosition();
-    if ((pole[positionTik].innerText == "X") || (pole[positionTik].innerText == "O")) {
-        botRound();
-    } else {    
+    if ((pole[positionTik].innerText !== "X") && (pole[positionTik].innerText !== "O")) {
         pole[positionTik].innerText = "O";
         zeroCounter.push(positionTik);
-        counterTikitaka++
+        checkWin();
+        counterTikitaka++;
+        
+    } else if (counterTikitaka===9) {
+        checkWin();
+    } else {
+
+        botRound();
     }
     
     
@@ -79,31 +102,33 @@ function checkWin() {
             for (let i=0; i<zeroCounter.length; i++){
                 if (ch.includes(markCounter[i])) {
                     winnerX++;
-                    if (winnerX == 3) {
+                    if (winnerX === 3) {
                         popUptoggle();
                         winner.innerHTML = "Победили КРЕСТИКИ";
 
-                        setTimeout(clearGame,2000);
+                        setTimeout(clearGame,1000);
+                        console.log ("Победили крестики")
                     }
-                }
+                } else
                 if (ch.includes(zeroCounter[i])) {
                     winnerO++;
-                    if (winnerO == 3) {
+                    if (winnerO === 3) {
                         popUptoggle();
                         winner.innerHTML = "Победили НОЛИКИ";
                         
-                        setTimeout(clearGame,2000);
+                        setTimeout(clearGame,1000);
+                        console.log ("Победили нолики")
                     }
-                } 
+                } else if (counterTikitaka===9) {
+                    popUptoggle();
+                    winner.innerHTML = "Ничья";
+                    console.log ("ничья")
+                    setTimeout(clearGame,1000);
+                }
+                
         }
     }
 
-    if (counterTikitaka === 9) {
-        popUptoggle();
-        winner.innerHTML = "Ничья";
-                        
-        setTimeout(clearGame,2000);
-    }
 }
 
 function popUptoggle () {
