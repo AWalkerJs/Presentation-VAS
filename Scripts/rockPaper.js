@@ -94,7 +94,7 @@ function checkWin() {
                         winner.innerHTML = "Победили КРЕСТИКИ";
 
                         setTimeout(clearGame,1000);
-                        console.log ("Победили крестики")
+                         return console.log ("Победили крестики")
                     }
                 } else
                 if (ch.includes(zeroCounter[i])) {
@@ -104,7 +104,7 @@ function checkWin() {
                         winner.innerHTML = "Победили НОЛИКИ";
                         
                         setTimeout(clearGame,1000);
-                        console.log ("Победили нолики")
+                        return console.log ("Победили нолики")
                     }
                 } else {
                     counterTikitaka++;
@@ -116,8 +116,9 @@ function checkWin() {
     if (counterTikitaka===9) {
         popUptoggle();
         winner.innerHTML = "Ничья";
-        console.log ("ничья")
+        
         setTimeout(clearGame,1000);
+        return console.log ("ничья")
     }
 }
 
