@@ -384,6 +384,9 @@ select:hover{
     padding-top: 5px;
 }
 
+.cost__bitcoin {
+    margin-bottom: 10px;
+}
 
 /* Медиа Стили */
 @media (max-width: 767px) {
