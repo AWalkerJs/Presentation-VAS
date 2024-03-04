@@ -380,6 +380,10 @@ select:hover{
     border-radius: 50%;
 }
 
+.clicker__submenu {
+    padding-top: 5px;
+}
+
 
 /* Медиа Стили */
 @media (max-width: 767px) {
