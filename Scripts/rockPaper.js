@@ -34,18 +34,20 @@ const mapWinner =   [[0,1,2],
                     [2,4,6]];
 
 const chooseSideArr = ["X", "O"];
-
+let gameStatusValue = 0;
 
 let pole = document.querySelectorAll(".tikitaka__pole");
 
 pole.forEach((elem, index) => {
+    
     elem.addEventListener("click", function(){
+        gameStatusValue = 0;
         
         if ((elem.innerText !== "X") && (elem.innerText !== "O")) {
             elem.innerText = "X";
             markCounter.push(index);
             checkWin();
-            
+            if (gameStatusValue) return
             botRound();
             
             
@@ -66,11 +68,12 @@ function botRound() {
         zeroCounter.push(positionTik);
         checkWin();
         
-        
-    } else if (counterTikitaka===9) {
-        return
-    } else {
-
+       
+    } 
+    // else if (counterTikitaka===4) {
+    //     return
+    // } 
+    else {
         botRound();
     }
     
@@ -94,20 +97,20 @@ function checkWin() {
                     winnerX++;
                     if (winnerX === 3) {
                         popUptoggle();
+                        gameStatusValue++;
                         winner.innerHTML = "Победили КРЕСТИКИ";
 
                         clearGame();
-                         return console.log ("Победили крестики")
                     }
                 } else
                 if (ch.includes(zeroCounter[i])) {
                     winnerO++;
                     if (winnerO === 3) {
                         popUptoggle();
+                        gameStatusValue++;
                         winner.innerHTML = "Победили НОЛИКИ";
                         
-                        clearGame();;
-                        return console.log ("Победили нолики")
+                        clearGame();
                     }
                 } 
                 
@@ -140,6 +143,7 @@ function clearGame() {
     markCounter = [];
     zeroCounter = [];
     counterTikitaka = 0;
+    
     
 }
 
