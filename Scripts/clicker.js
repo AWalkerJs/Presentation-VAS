@@ -12,6 +12,6 @@ function userClick () {
 fetch ("https://api.coindesk.com/v1/bpi/currentprice.json")
     .then (response => response.json())
     .then (data => {
-        bitcoinCostValue.innerText = `${data.bpi.USD.rate_float} USD`;
+        bitcoinCostValue.innerText = `${data.bpi.USD.rate_float} ${data.bpi.USD.code}`;
         dataBitcoinValue.innerText = data.time.updated;
     })

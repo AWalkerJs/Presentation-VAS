@@ -65,7 +65,7 @@ function botRound() {
         pole[positionTik].innerText = "O";
         zeroCounter.push(positionTik);
         checkWin();
-        counterTikitaka++;
+        
         
     } else if (counterTikitaka===9) {
         return
@@ -82,7 +82,10 @@ function getRandomPosition() {
 }
 
 function checkWin() {
-    console.log (markCounter);
+    
+    
+    counterTikitaka++;
+    
     for(let ch of mapWinner) {
         let winnerX = 0;
         let winnerO = 0;
@@ -93,7 +96,7 @@ function checkWin() {
                         popUptoggle();
                         winner.innerHTML = "Победили КРЕСТИКИ";
 
-                        setTimeout(clearGame,1000);
+                        clearGame();
                          return console.log ("Победили крестики")
                     }
                 } else
@@ -103,12 +106,10 @@ function checkWin() {
                         popUptoggle();
                         winner.innerHTML = "Победили НОЛИКИ";
                         
-                        setTimeout(clearGame,1000);
+                        clearGame();;
                         return console.log ("Победили нолики")
                     }
-                } else {
-                    counterTikitaka++;
-                }
+                } 
                 
         }
     }
@@ -117,7 +118,7 @@ function checkWin() {
         popUptoggle();
         winner.innerHTML = "Ничья";
         
-        setTimeout(clearGame,1000);
+        clearGame();
         return console.log ("ничья")
     }
 }
