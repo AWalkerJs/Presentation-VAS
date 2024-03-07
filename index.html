@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="resource/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="Resources/site_logo.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,8 +37,10 @@
 <!-- Первое приложение -->
 <!-- Описание -->
             <div class="app">
+                
                 <div class="work__app">
                     <div class="left__column">
+                        
                         <div class="input__decoration">
                             <input 
                             type="number"
@@ -85,6 +87,7 @@
                     
                 </div>
                 <div class="description__app">
+                    
                     <h1 class="description__tittle">Приложение для учета расходов.</h1>
                     <p class="description__content"> Работает на ПК и на мобильных, 
                         чуть с разным дизайном. Идет сохранение данных в localStorage и подгрузка 
@@ -194,7 +197,7 @@
 
             <div class="app">
                 <div class="work__app">
-                    <div class="tikitaka__column  ">
+                    <div class="tikitaka__column right__column ">
                         <div class="ip__information"></div>
                         
                     </div>
@@ -214,6 +217,80 @@
                     </p>
                 </div>
             </div>
+
+
+
+<!-- Четвертое приложение -->
+<!-- Описание -->
+
+            <div class="app">
+                <div class="work__app">
+                    <div class="tikitaka__column right__column ">
+                        <div class="piano__app">
+                            <div class="piano__key do_note "> do|1 </div>
+                            <div class="piano__key re_note "> re|2 </div>
+                            <div class="piano__key mi_note "> mi|3 </div>
+                            <div class="piano__key fa_note "> fa|4 </div>
+                            <div class="piano__key sol_note "> sol|5 </div>
+                            <div class="piano__key la_note "> la|6 </div>
+                            <div class="piano__key si_note "> si|7 </div>
+
+
+                            <audio src="Resources/MusicApp/zvuk-notyi-do.mp3"
+                            preload="auto"
+                            class="audio__do 1"
+                            data-key="49"></audio>
+
+                            <audio src="Resources/MusicApp/zvuk-notyi-re.mp3"
+                            preload="auto"
+                            class="audio__re 2"
+                            data-key="50"></audio>
+
+                            <audio src="Resources/MusicApp/zvuk-notyi-mi.mp3"
+                            preload="auto"
+                            class="audio__mi 3"
+                            data-key="51"></audio>
+
+                            <audio src="Resources/MusicApp/zvuk-notyi-fa.mp3"
+                            preload="auto"
+                            class="audio__fa 4"
+                            data-key="52"></audio>
+
+                            <audio src="Resources/MusicApp/zvuk-notyi-sol.mp3"
+                            preload="auto"
+                            class="audio__sol 5"
+                            data-key="53"></audio>
+
+                            <audio src="Resources/MusicApp/zvuk-notyi-lya.mp3"
+                            preload="auto"
+                            class="audio__la 6"
+                            data-key="54"></audio>
+
+                            <audio src="Resources/MusicApp/zvuk-notyi-si.mp3"
+                            preload="auto"
+                            class="audio__si 7"
+                            data-key="55"></audio>
+                        </div>
+                    </div>
+                    <div class="right__column tikitaka__bug">
+                        <div class="tikitaka__menu ">
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="description__app">  
+                    <h1 class="description__tittle">Информация про IP.</h1>
+                    <p class="description__content"> Работает на ПК и на мобильных, 
+                        чуть с разным дизайном. Сделал выбор стороны + выбор символа
+                        за который хочешь играть. Сделал выбор сложности.
+
+                    </p>
+                </div>
+            </div>
+
+
+
 
 
         </section>
@@ -267,5 +344,6 @@
     <script src="Scripts/expense.js"></script>
     <script src="Scripts/popupExpense.js"></script>
     <script src="Scripts/script.js"></script>
+    <script src="Scripts/pianoApp.js"></script>
 </body>
 </html>

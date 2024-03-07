@@ -30,16 +30,19 @@ body {
 
 .app {
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: space-around;
     
     max-height: 100%;
+    
     margin: 20px;
     box-sizing: border-box;
     
 }
 
 .work__app {
+    position: relative;
     border: 2px solid black;
     border-radius: 40px;
     display: flex;
@@ -60,7 +63,6 @@ body {
 }
 
 .left__column {
-   
     min-width: 50%;
     display: flex;
     flex-direction: column;
@@ -387,6 +389,63 @@ select:hover{
 .cost__bitcoin {
     margin-bottom: 10px;
 }
+
+/* 
+Стили для IP Inform
+*/
+
+.ip__information {
+    box-sizing: border-box;
+    width: 100%;
+    
+}
+
+
+
+/* 
+Стили для пианино
+*/
+
+.piano__app {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.piano__key {
+    width: 50px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 
+Поп Ап для сворачивания приложений
+*/
+
+/* <button class="hidden__button"></button> */
+.hidden__button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+
+    background-image: url(/Resources/hidden.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: background-image 1s 0s;
+}
+.hidden__button:active {
+    background-image: url(/Resources/underHidden.png);
+}
+
+
+
 
 /* Медиа Стили */
 @media (max-width: 767px) {
