@@ -423,6 +423,30 @@ select:hover{
     justify-content: center;
 }
 
+/* 
+ПРОБА ПЕРА РПГ
+*/
+
+.roadgame {
+ width: 125px;
+ box-sizing: border-box;
+}
+
+.test__divchik {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 25px;
+    height: 20px;
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
+}
+
+.player__zone {
+    background-color: red;
+}
+
+
 
 /* 
 Поп Ап для сворачивания приложений

@@ -21,10 +21,8 @@ let audioPlaying;
 window.addEventListener("keydown", playAudio);
 
 function playAudio (event) {
-    console.log (event.keyCode);
-    console.log (event.key);
+    
     audioPlaying = document.querySelector(`audio[data-key="${event.keyCode}"]`);
-    console.log (audioPlaying)
     if (audioPlaying.play()) {
         audioPlaying.pause()    
         audioPlaying.currentTime = 0;
