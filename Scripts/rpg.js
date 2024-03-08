@@ -1,19 +1,32 @@
+// Элемент где будет отрисовываться игра
 const gameZone = document.querySelector(".roadgame");
 
+// Игровое поле в виде 2мерного массива. Игрок это Х в центре
+const zoneArr = [
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","X","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ["","","","","","","","","","","","","","",""],
+                ];
 
-                const zoneArr = [
-                    ["","","","",""],
-                    ["","","","",""],
-                    ["","","X","",""],
-                    ["","","","",""],
-                    ["","","","",""]
-                    ];
 
-                
-let playerPositionValue = [2,2];
+// Позиция игрока
+let playerPositionValue = [7,7];
 
 createMap()
 
+// Отрисовка карты на странице по вводному массиву
 function createMap () {
 
     for (let ch of zoneArr) {
@@ -27,30 +40,15 @@ function createMap () {
 
     }
 
-    playerPosition();
-}
-
-function playerPosition () {
-
-    
-
-    const zoneCube = document.querySelectorAll(".test__divchik");
-    zoneCube.forEach((elem) => {
-        if (elem.textContent == "X") {
-            elem.classList.add("player__zone");
-        }
-    })
-
     movePlayer();
 }
 
+// Определение позиции игрока + покраска в красный цвет
+// + убираем покраску если игрок сдвинулся
 function movePlayer () {
 
     const zoneCube = document.querySelectorAll(".test__divchik");
 
-    
-
-    
     zoneCube.forEach((elem) => {
         if (elem.textContent == "X") {
             elem.classList.add("player__zone");
@@ -60,7 +58,7 @@ function movePlayer () {
     })
 }
 
-
+// Полное удаление карты для новой отрисовки
 function removeMap () {
     const zoneCube = document.querySelectorAll(".test__divchik");
     zoneCube.forEach(elem => {
@@ -70,37 +68,30 @@ function removeMap () {
     
 }
 
-
+// Основное тело программы
+// Слушатели на W A S D
+// + проверка на края игрового поля
+// Движения игрока
 document.body.addEventListener("keydown", function (keySimbol) {
 
     zoneArr[playerPositionValue[0]][playerPositionValue[1]] = "";
     if (keySimbol.key == "s") {
+        if (playerPositionValue[0] == 14) return
         playerPositionValue[0] += 1;
     } else if (keySimbol.key == "w") {
+        if (playerPositionValue[0] == 0) return
         playerPositionValue[0] -= 1;
     } else if (keySimbol.key == "d") {
+        if (playerPositionValue[1] == 14) return
         playerPositionValue[1] += 1;
     } else if (keySimbol.key == "a") {
+        if (playerPositionValue[1] == 0) return
         playerPositionValue[1] -= 1;
     }
 
-    clearZoneFields();
     zoneArr[playerPositionValue[0]][playerPositionValue[1]] = "X";
     
     
     removeMap();
     createMap();
 })
-
-function clearZoneFields () {
-    for (let char of zoneArr) {
-        
-        for (let charOfChar of char) {
-            charOfChar = "";
-        }
-    }
-    console.log (zoneArr);
-
-
-}
-

@@ -10,9 +10,6 @@ const clickerPopUpContent = document.querySelector(".clicker__popup__content");
 const clickerPopupCloseButton = document.querySelector(".clicker__close__button");
 
 // кнопки из поп Апа для апгрейдов
-// const increaseButtonOne = document.querySelector(".increase__clicker__one");
-// const increaseButtonTen = document.querySelector(".increase__clicker__ten");
-// const increaseButtonSto = document.querySelector(".increase__clicker__sotna");
 const allUpgradeButtons = document.querySelectorAll(".buttonUpgradeClicker");
 
 allUpgradeButtons.forEach((val) => {
