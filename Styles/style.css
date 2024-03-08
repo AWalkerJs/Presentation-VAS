@@ -509,6 +509,10 @@ select:hover{
     background-color: red;
 }
 
+.bot__zone {
+    background-color: yellow;
+}
+
 
 
 /* 

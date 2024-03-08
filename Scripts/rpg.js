@@ -52,6 +52,8 @@ function movePlayer () {
     zoneCube.forEach((elem) => {
         if (elem.textContent == "X") {
             elem.classList.add("player__zone");
+        } else if (elem.textContent == "O") {
+            elem.classList.add("bot__zone");
         } else {
             elem.classList.remove("player__zone");
         }
@@ -91,7 +93,17 @@ document.body.addEventListener("keydown", function (keySimbol) {
 
     zoneArr[playerPositionValue[0]][playerPositionValue[1]] = "X";
     
-    
+    botSpawn();
     removeMap();
     createMap();
 })
+
+// Спавн Бота
+function botSpawn () {
+    zoneArr[getPositionBotRPG()][getPositionBotRPG()] = "O"
+
+}
+
+function getPositionBotRPG() {
+    return Math.floor(Math.random() * 14);
+}
