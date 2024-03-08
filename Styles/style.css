@@ -390,6 +390,69 @@ select:hover{
     margin-bottom: 10px;
 }
 
+.clicker__upgrades {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.clicker__upgrades__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+Поп-ап для кликера
+*/
+
+.clicker__popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+
+    transition: 0.3s;
+}
+
+.clicker__popup__content {
+    width: 30%;
+    background-color: white;
+    height: 20%;
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.clicker__popup__open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.clicker__close__button {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 40%;
+    right: 35%;
+    background-color: rgb(151, 0, 0);
+}
+
 /* 
 Стили для IP Inform
 */
@@ -525,6 +588,10 @@ select:hover{
     }
 
     .expense__close__button {
+        right: 15%;
+    }
+
+    .clicker__close__button {
         right: 15%;
     }
 

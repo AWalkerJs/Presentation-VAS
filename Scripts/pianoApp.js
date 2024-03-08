@@ -14,11 +14,16 @@
 // const audioLa = document.querySelector(".audio__la");
 // const audioSi = document.querySelector(".audio__si");
 
-// let numTest = 1;
+// let
 
+const startPianoButton = document.querySelector(".piano__button__start");
 let audioPlaying;
 
-window.addEventListener("keydown", playAudio);
+startPianoButton.addEventListener("click", userPlayPiano);
+
+function userPlayPiano () {
+    document.body.addEventListener("keydown", playAudio);
+}
 
 function playAudio (event) {
     

@@ -1,24 +1,16 @@
 const gameZone = document.querySelector(".roadgame");
 
-// const zoneArr = [
-//                 [[1],[2],[3],[4],[5]],
-//                 [[6],[7],[8],[9],[0]],
-//                 [[1],[2],[3],[4],[5]],
-//                 [[6],[7],[8],[9],[0]],
-//                 [[1],[2],[3],[4],[5]]];
 
-const zoneArr = [
-                [[],[],[],[],[]],
-                [[],[],[],[],[]],
-                [[],[],["X"],[],[]],
-                [[],[],[],[],[]],
-                [[],[],[],[],[]]];
+                const zoneArr = [
+                    ["","","","",""],
+                    ["","","","",""],
+                    ["","","X","",""],
+                    ["","","","",""],
+                    ["","","","",""]
+                    ];
+
                 
 let playerPositionValue = [2,2];
-console.log (playerPositionValue[0])
-console.log (playerPositionValue[1]);
-
-console.log (zoneArr[playerPositionValue[0]][playerPositionValue[1]]);
 
 createMap()
 
@@ -56,21 +48,14 @@ function movePlayer () {
 
     const zoneCube = document.querySelectorAll(".test__divchik");
 
-    zoneArr[2][2] = "";
-    playerPositionValue[0] += 1;
-
-    console.log (zoneArr[2][2]);
-    console.log (zoneArr[playerPositionValue[0]][playerPositionValue[1]]);
-    console.log (playerPositionValue);
-
-    zoneArr[playerPositionValue[0]][playerPositionValue[1]] = "X";
-    console.log ( zoneArr[playerPositionValue[0]][playerPositionValue[1]] );
-
+    
 
     
     zoneCube.forEach((elem) => {
         if (elem.textContent == "X") {
             elem.classList.add("player__zone");
+        } else {
+            elem.classList.remove("player__zone");
         }
     })
 }
@@ -80,9 +65,42 @@ function removeMap () {
     const zoneCube = document.querySelectorAll(".test__divchik");
     zoneCube.forEach(elem => {
         elem.remove();
+        elem.classList.remove("player__zone");
     })
     
 }
 
 
+document.body.addEventListener("keydown", function (keySimbol) {
+
+    zoneArr[playerPositionValue[0]][playerPositionValue[1]] = "";
+    if (keySimbol.key == "s") {
+        playerPositionValue[0] += 1;
+    } else if (keySimbol.key == "w") {
+        playerPositionValue[0] -= 1;
+    } else if (keySimbol.key == "d") {
+        playerPositionValue[1] += 1;
+    } else if (keySimbol.key == "a") {
+        playerPositionValue[1] -= 1;
+    }
+
+    clearZoneFields();
+    zoneArr[playerPositionValue[0]][playerPositionValue[1]] = "X";
+    
+    
+    removeMap();
+    createMap();
+})
+
+function clearZoneFields () {
+    for (let char of zoneArr) {
+        
+        for (let charOfChar of char) {
+            charOfChar = "";
+        }
+    }
+    console.log (zoneArr);
+
+
+}
 
