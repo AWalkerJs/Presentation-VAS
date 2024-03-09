@@ -24,6 +24,12 @@ const zoneArr = [
 // Позиция игрока
 let playerPositionValue = [7,7];
 
+// Позиция бота
+let botPositionValue = ["",""];
+
+// Количество врагов
+let oponentsValue = 1;
+
 createMap()
 
 // Отрисовка карты на странице по вводному массиву
@@ -100,10 +106,57 @@ document.body.addEventListener("keydown", function (keySimbol) {
 
 // Спавн Бота
 function botSpawn () {
-    zoneArr[getPositionBotRPG()][getPositionBotRPG()] = "O"
+    // Следим чтобы врагов было не больше 1 шт.
+    if (oponentsValue > 1) {return}
+    let aPosition = getPositionBotRPG();
+    let bPosition = getPositionBotRPG();
+    zoneArr[aPosition][bPosition] = "O";
+
+    botPositionValue[0] = aPosition;
+    botPositionValue[1] = bPosition;
+
+    oponentsValue++;
 
 }
 
+// Получение случайных сначений для спавна бота от 0 до 14
 function getPositionBotRPG() {
     return Math.floor(Math.random() * 14);
 }
+
+// Движения бота по полю. Бот всегда стремится к полю игрока
+// Делает это равномерно, двигаясь по обоим осям.
+function botMoving () {
+    let verticalMoves;
+    let horizontalMoves;
+    let differenceValue;
+
+    verticalMoves = botPositionValue[0] - playerPositionValue[0];
+    horizontalMoves = botPositionValue[1] - playerPositionValue[1];
+    differenceValue = Math.abs(verticalMoves) - Math.abs(horizontalMoves);
+    
+    zoneArr[botPositionValue[0]][botPositionValue[1]] = "";
+    
+    if (Math.abs(verticalMoves) > Math.abs(horizontalMoves)) {
+        if(verticalMoves < 0) {
+            botPositionValue[0] = botPositionValue[0]+1
+        } else {
+            botPositionValue[0] = botPositionValue[0]-1
+        }
+    } else {
+        if(horizontalMoves < 0) {
+            botPositionValue[1] = botPositionValue[1]+1
+        } else {
+            botPositionValue[1] = botPositionValue[1]-1
+        }
+    }
+    zoneArr[botPositionValue[0]][botPositionValue[1]] = "O";
+
+    removeMap();
+    createMap();
+    
+}
+
+// Запуск хода бота
+// Бот ходит каждую секунду
+setInterval( botMoving, 1000 )
