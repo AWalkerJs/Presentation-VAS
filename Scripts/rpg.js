@@ -190,6 +190,7 @@ function botMoving () {
         botPositionValue[1] == playerPositionValue[1]) {
         gamePhaseValue = 1;
         removeMap();
+        clearInterval(botStartingPlay);
         toggleMoveFight();
     } else {
         removeMap();
@@ -230,4 +231,4 @@ function checkWinnerRGP () {
 
 // Запуск хода бота
 // Бот ходит каждую секунду
-setInterval( botMoving, 1000 )
+const botStartingPlay = setInterval( botMoving, 1000 );
