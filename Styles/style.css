@@ -492,12 +492,15 @@ select:hover{
 
 .roadgame {
  width: 375px;
+ height: 100%;
  box-sizing: border-box;
 }
 
 .test__divchik {
     box-sizing: border-box;
     display: inline-block;
+    margin: 0;
+    padding: 0;
     width: 25px;
     height: 20px;
     border: 1px solid black;

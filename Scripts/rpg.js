@@ -209,6 +209,10 @@ function battlePhase () {
     
 }
 
+function botAttackPlayer () {
+    
+}
+
 // Функция случайного значения для удара Бота
 function botRandomPunch () {
     return Math.floor(Math.random() * 2);
