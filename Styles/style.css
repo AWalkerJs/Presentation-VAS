@@ -552,7 +552,7 @@ select:hover{
     
 }
 
-.target__rpg {
+.target__rpg , .target__rpg__pl {
     border: 2px solid black;
     width: 100%;
     height: 100%;
@@ -566,6 +566,16 @@ select:hover{
     box-sizing: border-box;
     
 }
+
+.target__rpg__pl:hover {
+    box-shadow: inset 0 0 10px 5px rgb(255, 1, 1)
+}
+
+.target__rpg__activ {
+    box-shadow: inset 0 0 10px 5px rgb(255, 1, 1)
+}
+
+
 
 /* 
 Поп Ап для сворачивания приложений
