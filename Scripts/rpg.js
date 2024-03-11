@@ -64,7 +64,7 @@ let botHpValue = 100;
 // Урон игрока
 let playerDamageValue = 40;
 // Урон бота
-let botDamageValue = 5;
+let botDamageValue = 10;
 
 // Инвентарь игрока
 const playerInventory = {};
@@ -346,8 +346,9 @@ function checkWinnerRGP () {
         document.body.addEventListener("keydown", playerMovesListener);
     } else if (playeHpValue <= 0) {
         removeMap();
+        toggleMoveFight ();
         let loseInfo = document.createElement("div")
-        loseInfo.textContent = "You Defeat";
+        loseInfo.textContent = "You Defeat";    
         gameZone.appendChild(loseInfo);
     }
 }
